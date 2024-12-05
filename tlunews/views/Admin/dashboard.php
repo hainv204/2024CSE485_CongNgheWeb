@@ -50,65 +50,67 @@
 
 <body>
 
-<body>
-    <div class="dashboard">
-        <div class="sidebar" style="background: #edf6fe; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-            <h1 class="text-center text-black">Dashboard</h1>
-            <a href="#">Tổng quan</a>
-            <a href="../Admin/news/index.php">Quản lý bài viết</a>
-            <a href="#">Cài đặt</a>
-            <a href="../Home/index.php">Đăng xuất</a>
-        </div>
-    </div>
-
-    <div class="content">
-        <div class="header d-flex justify-content-between align-items-center">
-            <div>
-                <span>Admin</span> | <a style="text-decoration:none; color:cadetblue;" href="../Home/home.php">Thoát</a>
+    <body>
+        <div class="dashboard">
+            <div class="sidebar" style="background: #edf6fe; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                <h1 class="text-center text-black">Dashboard</h1>
+                <a href="#">Tổng quan</a>
+                <a href="../Admin/news/index.php">Quản lý bài viết</a>
+                <a href="#">Cài đặt</a>
+                <a href="../Home/index.php">Đăng xuất</a>
             </div>
         </div>
 
-        <!-- Dashboard Content -->
-        <div class="row mt-4">
-            <!-- Card 1 -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Tổng số bài viết</h5>
-                        <p class="card-text">350</p>
-                    </div>
+        <div class="content">
+            <div class="header d-flex justify-content-between align-items-center">
+                <div>
+                    <h2><strong>Dashboard</strong></h2>
+                    <br>
+                    <h5>Dashboard / Tổng quan</h5>
                 </div>
             </div>
 
-            <!-- Card 2 -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Tổng số người dùng</h5>
-                        <p class="card-text">1,500</p>
+            <!-- Dashboard Content -->
+            <div class="row mt-4">
+                <!-- Card 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Tổng số bài viết</h5>
+                            <p class="card-text">350</p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Card 3 -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Đang chờ duyệt</h5>
-                        <p class="card-text">12</p>
+                <!-- Card 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Tổng số người dùng</h5>
+                            <p class="card-text">1,500</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Đang chờ duyệt</h5>
+                            <p class="card-text">12</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
 
 
-    <!-- Content -->
+        <!-- Content -->
 
 
-    <!-- Liên kết đến Bootstrap JS và Popper.js -->
-    <script src="../../assets/js/bootstrap.bundle.min.js"></script>
-</body>
+        <!-- Liên kết đến Bootstrap JS và Popper.js -->
+        <script src="../../assets/js/bootstrap.bundle.min.js"></script>
+    </body>
 
 </html>
