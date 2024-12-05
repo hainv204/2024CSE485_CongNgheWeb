@@ -12,7 +12,7 @@
     <p><strong>Chuyên mục:</strong> <?= htmlspecialchars($news['category_name']) ?></p>
     <p><strong>Ngày đăng:</strong> <?= htmlspecialchars($news['created_at']) ?></p>
     <?php if (!empty($news['image'])): ?>
-        <img src="../../assets/images/<?= htmlspecialchars($news['image']) ?>" alt="<?= htmlspecialchars($news['title']) ?>">
+        <img src="<?= htmlspecialchars($news['image']) ?>" alt="<?= htmlspecialchars($news['title']) ?>">
     <?php endif; ?>
     <p><?= nl2br(htmlspecialchars($news['content'])) ?></p>
 </body>

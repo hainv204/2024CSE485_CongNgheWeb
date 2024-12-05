@@ -1,5 +1,5 @@
 INSERT INTO news (title, content, image, created_at, category_id) VALUES
-('Tăng cường an toàn giao thông', 'Nhiều biện pháp được triển khai nhằm giảm tai nạn giao thông.', '/tlunews/assets/images/1-2.jpg', '2024-12-04 08:00:00', 1),
+('Tăng cường an toàn giao thông', 'Nhiều biện pháp được triển khai nhằm giảm tai nạn giao thông.', '/2024CSE485_CongNgheWeb/tlunews/assets/images/1-2.jpg', '2024-12-04 08:00:00', 1),
 ('Công nghiệp 4.0 tại Việt Nam', 'Những bước tiến mới trong lĩnh vực công nghiệp.', '/tlunews/assets/images/2.jpg', '2024-12-03 13:00:00', 2),
 ('Giảm thiểu rác thải nhựa', 'Phong trào xanh đang lan rộng khắp cả nước.', '/tlunews/assets/images/3.jpg', '2024-12-02 10:00:00', 3),
 ('Xu hướng thời trang mùa đông', 'Những bộ sưu tập mới cho mùa đông năm nay.', '/tlunews/assets/images/D4.jpg', '2024-11-30 16:00:00', 4),

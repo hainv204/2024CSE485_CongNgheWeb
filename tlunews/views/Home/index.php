@@ -22,9 +22,18 @@
                             <a class="nav-link" href="../Admin/login.php">Đăng nhập</a>
                         </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    <!-- Tìm kiếm theo thể loại -->
+                    <form class="d-flex" role="search" method="GET" action="index.php">
+                        <select class="form-select me-2" name="category_id">
+                            <option value="">Chọn thể loại</option>
+                            <?php foreach ($categories as $category): ?>
+                                <option value="<?= $category['id'] ?>"
+                                    <?php if (isset($_GET['category_id']) && $_GET['category_id'] == $category['id']) echo 'selected'; ?>>
+                                    <?= htmlspecialchars($category['name']) ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                        <button class="btn btn-outline-success" type="submit">Tìm kiếm</button>
                     </form>
                 </div>
             </div>
@@ -32,22 +41,24 @@
     </header>
     <main>
         <div class="container mt-5">
-            <h1>Danh sách tin tức</h1>
+            <h1 class="text-center text_uppercase text-success mb-4">Danh sách tin tức</h1>
             <div class="row">
-                <?php foreach ($newsList as $news): ?>
-                    <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <img src="../../assets/images/<?= htmlspecialchars($news['image']) ?>"
-                                class="card-img-top"
-                                alt="Hình ảnh tin tức">
-                            <div class="card-body">
-                                <h5 class="card-title"><?= htmlspecialchars($news['title']) ?></h5>
-                                <p class="card-text"><?= htmlspecialchars(substr($news['content'], 0, 100)) ?>...</p>
-                                <a href="index.php?controller=news&action=detail&id=<?= $news['id'] ?>" class="btn btn-primary">Xem chi tiết</a>
+                <?php if (count($newsList) > 0): ?>
+                    <?php foreach ($newsList as $news): ?>
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img src="<?= htmlspecialchars($news['image']) ?>" class="card-img-top" alt="Hình ảnh tin tức">
+                                <div class="card-body">
+                                    <h5 class="card-title"><?= htmlspecialchars($news['title']) ?></h5>
+                                    <p class="card-text"><?= htmlspecialchars(substr($news['content'], 0, 100)) ?>...</p>
+                                    <a href="index.php?controller=home&action=detail&id=<?= $news['id'] ?>" class="btn btn-primary">Xem chi tiết</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                <?php endforeach; ?>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <p>Không có tin tức nào trong thể loại này.</p>
+                <?php endif; ?>
             </div>
         </div>
     </main>

@@ -35,4 +35,16 @@ class News
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
+    public function getNewsByCategory($category_id)
+    {
+        $sql = "SELECT news.*, categories.name AS category_name 
+            FROM news 
+            LEFT JOIN categories ON news.category_id = categories.id 
+            WHERE news.category_id = :category_id
+            ORDER BY news.created_at DESC";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam(':category_id', $category_id, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
