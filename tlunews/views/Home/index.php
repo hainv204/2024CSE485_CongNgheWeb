@@ -7,6 +7,165 @@
     <title>Home</title>
     <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
 </head>
+<style>
+body {
+    background: #eeeeee;
+}
+
+.form-inline {
+    display: inline-block;
+}
+
+.navbar-header.col {
+    padding: 0 !important;
+}
+
+.navbar {
+    background: #fff;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-bottom: 1px solid #d6d6d6;
+    box-shadow: 0 0 4px rgba(0, 0, 0, .1);
+}
+
+.nav-link img {
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    margin: -8px 0;
+    float: left;
+    margin-right: 10px;
+}
+
+.navbar .navbar-brand {
+    color: #555;
+    padding-left: 0;
+    padding-right: 50px;
+    font-family: 'Merienda One', sans-serif;
+}
+
+.navbar .navbar-brand i {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.search-box {
+    position: relative;
+}
+
+.search-box input {
+    box-shadow: none;
+    padding-right: 35px;
+    border-radius: 3px !important;
+}
+
+.search-box .input-group-addon {
+    min-width: 35px;
+    border: none;
+    background: transparent;
+    position: absolute;
+    right: 0;
+    z-index: 9;
+    padding: 7px;
+    height: 100%;
+}
+
+.search-box i {
+    color: #a0a5b1;
+    font-size: 19px;
+}
+
+.navbar .nav-item i {
+    font-size: 18px;
+}
+
+.navbar .dropdown-item i {
+    font-size: 16px;
+    min-width: 22px;
+}
+
+.navbar .nav-item.open>a {
+    background: none !important;
+}
+
+.navbar .dropdown-menu {
+    border-radius: 1px;
+    border-color: #e5e5e5;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
+}
+
+.navbar .dropdown-menu a {
+    color: #777;
+    padding: 8px 20px;
+    line-height: normal;
+}
+
+.navbar .dropdown-menu a:hover,
+.navbar .dropdown-menu a:active {
+    color: #333;
+}
+
+.navbar .dropdown-item .material-icons {
+    font-size: 21px;
+    line-height: 16px;
+    vertical-align: middle;
+    margin-top: -2px;
+}
+
+.navbar .badge {
+    color: #fff;
+    background: #f44336;
+    font-size: 11px;
+    border-radius: 20px;
+    position: absolute;
+    min-width: 10px;
+    padding: 4px 6px 0;
+    min-height: 18px;
+    top: 5px;
+}
+
+.navbar a.notifications,
+.navbar a.messages {
+    position: relative;
+    margin-right: 10px;
+}
+
+.navbar a.messages {
+    margin-right: 20px;
+}
+
+.navbar a.notifications .badge {
+    margin-left: -8px;
+}
+
+.navbar a.messages .badge {
+    margin-left: -4px;
+}
+
+.navbar .active a,
+.navbar .active a:hover,
+.navbar .active a:focus {
+    background: transparent !important;
+}
+
+@media (min-width: 1200px) {
+    .form-inline .input-group {
+        width: 300px;
+        margin-left: 30px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .form-inline {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .input-group {
+        width: 100%;
+    }
+}
+</style>
 
 <body>
     <header>
@@ -49,6 +208,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Tiêu đề bài viết 1</h5>
                                 <p class="card-text">Mô tả ngắn gọn về bài viết 1.</p>
+                                <button class="btn btn-outline-secondary">Xem chi tiết</button>
                             </div>
                         </div>
                     </div>
@@ -59,6 +219,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Tiêu đề bài viết 2</h5>
                                 <p class="card-text">Mô tả ngắn gọn về bài viết 2.</p>
+                                <button class="btn btn-outline-secondary">Xem chi tiết</button>
                             </div>
                         </div>
                     </div>
@@ -69,6 +230,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Tiêu đề bài viết 3</h5>
                                 <p class="card-text">Mô tả ngắn gọn về bài viết 3.</p>
+                                <button class="btn btn-outline-secondary">Xem chi tiết</button>
                             </div>
                         </div>
                     </div>
@@ -112,6 +274,31 @@
             </div>
         </footer>
         <script src="../../assets/js/bootstrap.bundle.min.js"></script>
-</body>
+        =======
+        <title>Danh sách tin tức</title>
+        </head>
+
+        <body>
+            <h1>Danh sách tin tức</h1>
+            <form method="GET" action="index.php">
+                <input type="hidden" name="controller" value="home">
+                <input type="hidden" name="action" value="search">
+                <input type="text" name="keyword" placeholder="Tìm kiếm tin tức...">
+                <button type="submit">Tìm kiếm</button>
+            </form>
+
+            <ul>
+                <?php foreach ($newsList as $news): ?>
+                <li>
+                    <a href="index.php?controller=news&action=detail&id=<?= $news['id'] ?>">
+                        <?= htmlspecialchars($news['title']) ?>
+                    </a>
+                    <p><?= htmlspecialchars($news['category_name']) ?> | <?= htmlspecialchars($news['created_at']) ?>
+                    </p>
+                </li>
+                <?php endforeach; ?>
+            </ul>
+            >>>>>>> origin/HoangThuPhuong
+        </body>
 
 </html>
