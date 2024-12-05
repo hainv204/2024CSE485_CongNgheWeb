@@ -90,8 +90,7 @@
             <h2><strong>Dashboard</strong></h2>
             <br>
             <div class="d-flex justify-content-between align-items-center" style="width: 100%;">
-                <h5 class="text-dark">Dashboard / Quản lý bài viết</h5>
-                <button class="btn">Thêm</button>
+                <h5 class="text-dark">Dashboard / Tổng quan</h5>
             </div>
         </div>
 
