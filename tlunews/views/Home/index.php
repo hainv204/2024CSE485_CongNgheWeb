@@ -4,31 +4,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
     <title>Home</title>
+    <style>
+        /* Màu mặc định cho liên kết trong navbar */
+        .navbar-nav .nav-link {
+            color: #000;
+            /* Màu mặc định */
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: white;
+            /* Màu khi hover */
+            background-color: #69b9f9;
+            /* background-color: #70bcfc; */
+            /* Đảm bảo không có nền */
+            border-radius: 5px;
+        }
+
+        /* Tùy chỉnh màu cho nút tìm kiếm */
+        .btn.btn-outline-secondary:hover:hover {
+            background-color: #69b9f9;
+            /* Màu nền khi hover */
+            color: white;
+            /* Màu chữ khi hover */
+            border: none;
+        }
+    </style>
+
+
     <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <header style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <nav class="navbar navbar-expand-lg " style="background: #edf6fe">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">TLUNews</a>
+                <a class="navbar-brand" href="#"><strong>
+                        <h2>TLUNews</h2>
+                    </strong></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Trang chủ</a>
+                            <a class="nav-link px-2" aria-current="page" href="#">Trang chủ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../Admin/login.php">Đăng nhập</a>
+                            <a class="nav-link px-2" href="../Admin/login.php">Đăng nhập</a>
                         </li>
                     </ul>
                     <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                        <input class="form-control me-2" type="search" placeholder="Tìm kiếm bài viết" aria-label="Search">
+                        <button class="btn btn-outline-secondary" type="submit">Tìm kiếm</button>
                     </form>
                 </div>
             </div>
@@ -74,67 +102,42 @@
                 </div>
             </div>
     </main>
-    <footer>
-        <footer class="bg-dark text-white py-4">
+        <footer class="text-black py-4 " style="background: #edf6fe; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
             <div class="container">
                 <div class="row">
                     <div class="col-md-4">
                         <h5>Liên hệ</h5>
                         <ul class="list-unstyled">
-                            <li>Email: contact@example.com</li>
-                            <li>Điện thoại: 123-456-7890</li>
-                            <li>Địa chỉ: 123 Main St, Thành phố ABC</li>
+                            <li>Email: nhom7@gmail.com</li>
+                            <li>Điện thoại: 0123-456-789</li>
+                            <li>Địa chỉ: 175 Tây Sơn, Đống Đa, Hà Nội</li>
                         </ul>
                     </div>
                     <div class="col-md-4">
                         <h5>Liên kết</h5>
                         <ul class="list-unstyled">
-                            <li><a href="#" class="text-white">Giới thiệu</a></li>
-                            <li><a href="#" class="text-white">Chính sách bảo mật</a></li>
-                            <li><a href="#" class="text-white">Điều khoản sử dụng</a></li>
+                            <li><a href="#" class="text-black">Giới thiệu</a></li>
+                            <li><a href="#" class="text-black">Chính sách bảo mật</a></li>
+                            <li><a href="#" class="text-black">Điều khoản sử dụng</a></li>
                         </ul>
                     </div>
                     <div class="col-md-4">
                         <h5>Mạng xã hội</h5>
                         <ul class="list-unstyled">
-                            <li><a href="#" class="text-white">Facebook</a></li>
-                            <li><a href="#" class="text-white">Twitter</a></li>
-                            <li><a href="#" class="text-white">Instagram</a></li>
+                            <li><a href="#" class="text-black">Facebook</a></li>
+                            <li><a href="#" class="text-black">Twitter</a></li>
+                            <li><a href="#" class="text-black">Instagram</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col text-center mt-4">
-                        <p>&copy; 2024 Trang báo ABC. Tất cả các quyền được bảo lưu.</p>
+                        <p>&copy; 2024 TLU NEWS.</p>
                     </div>
                 </div>
             </div>
         </footer>
         <script src="../../assets/js/bootstrap.bundle.min.js"></script>
-=======
-    <title>Danh sách tin tức</title>
-</head>
-
-<body>
-    <h1>Danh sách tin tức</h1>
-    <form method="GET" action="index.php">
-        <input type="hidden" name="controller" value="home">
-        <input type="hidden" name="action" value="search">
-        <input type="text" name="keyword" placeholder="Tìm kiếm tin tức...">
-        <button type="submit">Tìm kiếm</button>
-    </form>
-
-    <ul>
-        <?php foreach ($newsList as $news): ?>
-            <li>
-                <a href="index.php?controller=news&action=detail&id=<?= $news['id'] ?>">
-                    <?= htmlspecialchars($news['title']) ?>
-                </a>
-                <p><?= htmlspecialchars($news['category_name']) ?> | <?= htmlspecialchars($news['created_at']) ?></p>
-            </li>
-        <?php endforeach; ?>
-    </ul>
->>>>>>> origin/HoangThuPhuong
 </body>
 
 </html>
