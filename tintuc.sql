@@ -1,41 +1,21 @@
--- Thêm dữ liệu vào bảng users
-INSERT INTO users (username, password, role) VALUES
-('user1', 'password1', 0),
-('user2', 'password2', 0),
-('user3', 'password3', 0),
-('user4', 'password4', 0),
-('user5', 'password5', 0),
-('admin1', 'adminpassword1', 1),
-('admin2', 'adminpassword2', 1),
-('user6', 'password6', 0),
-('user7', 'password7', 0),
-('admin3', 'adminpassword3', 1);
-
--- Thêm dữ liệu vào bảng categories
-INSERT INTO categories (name) VALUES
-('Technology'),
-('Science'),
-('Health'),
-('Entertainment'),
-('Business'),
-('Sports'),
-('Education'),
-('Politics'),
-('Culture'),
-('Environment');
-
--- Thêm dữ liệu vào bảng news
-INSERT INTO news (title, content, image,created_at, category_id) VALUES
-('Thúc đẩy mối quan hệ hợp tác giáo dục Việt Nam và Romania
-', 'Việt Nam và Rumania đã có mối quan hệ hợp tác lâu dài nhiều năm qua trong lĩnh vực giáo dục đào tạo. Hơn 3000 kỹ sư, thạc sỹ, tiến sỹ do Rumania đào tạo giúp Việt Nam đã có những đóng góp tích cực cho sự phát triển kinh tế xã hội của đất nước.
-Trong khuôn khổ chuyến công tác và làm việc tại 1 số nước Châu Âu, trong 3 ngày (20, 21, 22/1), Thủ tướng Chính phủ Phạm Minh Chính và Phu nhân có chuyến công tác thăm chính thức nước Cộng hòa Romania. Bộ trưởng Bộ Giáo dục và Đào tạo (GD-ĐT) Nguyễn Kim Sơn và một số lãnh đạo các trường Đại học cùng tham gia đoàn công tác.
-Dưới sự chứng kiến của Thủ tướng hai nước, 3 biên bản hợp tác của các Bộ, ngành và 15 biên bản hợp tác giữa các cơ sở giáo dục đại học của Việt Nam và Romania đã được ký kết.', '', 1),
-('New Scientific Discoveries', 'Content about recent scientific discoveries...', 'science_image.jpg', 2),
-('Health Tips for a Better Life', 'Content about health tips...', 'health_image.jpg', 3),
-('Movie Reviews 2024', 'Content about movie reviews...', 'entertainment_image.jpg', 4),
-('Business Growth Strategies', 'Content about business strategies...', 'business_image.jpg', 5),
-('Top Sports Events', 'Content about upcoming sports events...', 'sports_image.jpg', 6),
-('Educational Reforms in 2024', 'Content about educational reforms...', 'education_image.jpg', 7),
-('Political Landscape of 2024', 'Content about the political situation...', 'politics_image.jpg', 8),
-('Cultural Trends', 'Content about cultural trends...', 'culture_image.jpg', 9),
-('Climate Change and Its Impact', 'Content about climate change...', 'environment_image.jpg', 10);
+INSERT INTO news (title, content, image, created_at, category_id) VALUES
+('Tăng cường an toàn giao thông', 'Nhiều biện pháp được triển khai nhằm giảm tai nạn giao thông.', '/tlunews/assets/images/1-2.jpg', '2024-12-04 08:00:00', 1),
+('Công nghiệp 4.0 tại Việt Nam', 'Những bước tiến mới trong lĩnh vực công nghiệp.', '/tlunews/assets/images/2.jpg', '2024-12-03 13:00:00', 2),
+('Giảm thiểu rác thải nhựa', 'Phong trào xanh đang lan rộng khắp cả nước.', '/tlunews/assets/images/3.jpg', '2024-12-02 10:00:00', 3),
+('Xu hướng thời trang mùa đông', 'Những bộ sưu tập mới cho mùa đông năm nay.', '/tlunews/assets/images/D4.jpg', '2024-11-30 16:00:00', 4),
+('Ẩm thực đường phố Việt Nam', 'Những món ăn đường phố hấp dẫn du khách.', '/tlunews/assets/images/daidiencacbon.jpg', '2024-12-01 12:00:00', 5),
+('Hội nghị quốc tế về biến đổi khí hậu', 'Các nhà lãnh đạo thế giới thảo luận về khí hậu.', '/tlunews/assets/images/hung2.jpg', '2024-11-29 14:00:00', 1),
+('Nhà văn đoạt giải thưởng lớn', 'Tác phẩm mới của ông gây chấn động văn đàn.', '/tlunews/assets/images/ird5.jpg', '2024-12-03 18:00:00', 2),
+('Thủ tướng thăm chính thức Nhật Bản', 'Nhiều hiệp định hợp tác được ký kết trong chuyến thăm.', '/tlunews/assets/images/LVSTG5.jpg', '2024-11-28 10:00:00', 3),
+('Phát triển nông nghiệp bền vững', 'Các giải pháp giúp nâng cao sản xuất nông nghiệp.', '/tlunews/assets/images/mou1.jpg', '2024-12-02 09:00:00', 4),
+('Cuộc sống vùng cao', 'Những câu chuyện đầy cảm hứng từ các bản làng vùng cao.', '/tlunews/assets/images/mou2_1.jpg', '2024-11-27 11:00:00', 5),
+('Phát hiện cổ vật quý tại Quảng Ninh', 'Những cổ vật có giá trị lịch sử lớn đã được phát hiện.', '/tlunews/assets/images/tq1.jpg', '2024-12-05 09:00:00', 1),
+('Chung kết cuộc thi nấu ăn toàn quốc', 'Những món ăn độc đáo được giới thiệu tại sự kiện.', '/tlunews/assets/images/ru3.jpg', '2024-12-04 14:00:00', 2),
+('Giải pháp giao thông thông minh', 'Ứng dụng công nghệ giúp giảm ùn tắc giao thông.', '/tlunews/assets/images/ru2.jpg', '2024-12-03 15:00:00', 3),
+('Nông dân ứng dụng công nghệ cao', 'Các mô hình canh tác hiện đại đang được nhân rộng.', '/tlunews/assets/images/mou2_1.jpg', '2024-12-02 08:30:00', 4),
+('Triển lãm tranh Việt Nam đương đại', 'Các tác phẩm nghệ thuật ấn tượng của hoạ sĩ Việt Nam.', '/tlunews/assets/images/mou1.jpg', '2024-12-01 10:00:00', 5),
+('Những thách thức với môi trường đô thị', 'Tăng trưởng đô thị đặt ra nhiều vấn đề về môi trường.', '/tlunews/assets/images/LVSTG5.jpg', '2024-12-01 11:30:00', 1),
+('Sản phẩm công nghiệp xanh', 'Xu hướng sản xuất thân thiện với môi trường.', '/tlunews/assets/images/ird5.jpg', '2024-12-04 12:00:00', 2),
+('Phong trào đọc sách ở giới trẻ', 'Câu chuyện truyền cảm hứng về văn hóa đọc.', '/tlunews/assets/images/hung2.jpg', '2024-12-03 09:30:00', 3),
+('Khám phá nền văn hóa Chăm', 'Những giá trị văn hóa đặc sắc của người Chăm.', '/tlunews/assets/images/daidiencacbon.jpg', '2024-12-02 14:00:00', 4),
+('Phát triển cơ sở hạ tầng giao thông nông thôn', 'Hỗ trợ giao thông vùng sâu vùng xa.', '/tlunews/assets/images/D4.jpg', '2024-12-05 08:00:00', 5);

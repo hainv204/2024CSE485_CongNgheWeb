@@ -2,12 +2,12 @@
 $controller = $_GET['controller'] ?? 'home';
 $action = $_GET['action'] ?? 'index';
 
-$controller = ucfirst($controller) . 'Controller';
-$controllerFile = "controllers/$controller.php";
+$controllerClass = ucfirst($controller) . 'Controller';
+$controllerFile = "controllers/$controllerClass.php";
 
 if (file_exists($controllerFile)) {
     require_once $controllerFile;
-    $controllerObj = new $controller();
+    $controllerObj = new $controllerClass();
     if (method_exists($controllerObj, $action)) {
         $controllerObj->$action();
     } else {

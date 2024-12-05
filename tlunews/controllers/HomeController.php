@@ -5,16 +5,8 @@ class HomeController
 {
     public function index()
     {
-        $newsModel = new News();
-        $newsList = $newsModel->getAllNews();
-        require_once 'views/home/index.php';
-    }
-
-    public function search()
-    {
-        $keyword = $_GET['keyword'] ?? '';
-        $newsModel = new News();
-        $newsList = $newsModel->searchNews($keyword);
-        require_once 'views/home/index.php';
+        $newsModel = new News(); // Gọi model News
+        $newsList = $newsModel->getAllNews(); // Lấy tất cả bản ghi từ bảng news
+        require_once __DIR__ . '/../views/home/index.php'; // Truyền dữ liệu vào view
     }
 }

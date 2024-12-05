@@ -1,24 +1,27 @@
 <?php
 require_once __DIR__ . '/../models/News.php';
 
-
 class NewsController
 {
     public function detail()
     {
-        $id = $_GET['id'] ?? null;
-        if (!$id) {
-            echo "Tin tức không tồn tại.";
-            return;
+        // Lấy ID từ URL
+        $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+
+        // Kiểm tra ID hợp lệ
+        if ($id <= 0) {
+            die('ID không hợp lệ');
         }
 
+        // Lấy dữ liệu từ model
         $newsModel = new News();
         $news = $newsModel->getNewsById($id);
+
         if (!$news) {
-            echo "Tin tức không tồn tại.";
-            return;
+            die('Không tìm thấy bài viết');
         }
 
-        require_once 'views/news/detail.php';
+        // Gửi dữ liệu sang view
+        require_once __DIR__ . '/../views/news/detail.php';
     }
 }
