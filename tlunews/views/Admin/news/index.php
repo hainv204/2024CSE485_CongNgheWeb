@@ -86,18 +86,18 @@
     <div class="content">
         <!-- Header -->
         <div class="header " style="background: #edf6fe; padding: 15px; border-radius: 5px;">
-                <h2><strong>Dashboard</strong></h2>
-                <br>
-                <div class="d-flex justify-content-between align-items-center" style="width: 100%;">
-                    <h5 class="text-dark">Dashboard / Quản lý bài viết</h5>
-                    <button class="btn">Thêm</button>
-                </div>
+            <h2><strong>Dashboard</strong></h2>
+            <br>
+            <div class="d-flex justify-content-between align-items-center" style="width: 100%;">
+                <h5 class="text-dark">Dashboard / Quản lý bài viết</h5>
+                <a href="./add.php"><button class="btn">Thêm</button></a>
             </div>
+        </div>
 
         <!-- Table for Posts -->
         <div class="mt-4">
 
-            
+
             <table class="table table-bordered">
                 <thead>
                     <tr>
@@ -120,7 +120,7 @@
                         <td>Thể loại hải cạc thích chem chép</td>
                         <td>
                             <div>
-                                <button class="btn">Sửa</button>
+                                <a href="./edit.php"><button class="btn">Sửa</button></a>
                                 <button class="btn">xóa</button>
                             </div>
                         </td>
