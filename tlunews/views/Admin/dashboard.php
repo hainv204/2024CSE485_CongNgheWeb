@@ -50,21 +50,19 @@
 
 <body>
 
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <h4 class="text-center text-white">Admin Dashboard</h4>
-        <a href="#">Trang chủ</a>
-        <a href="#">Quản lý bài viết</a>
-        <a href="#">Quản lý người dùng</a>
-        <a href="#">Cài đặt</a>
-        <a href="#">Đăng xuất</a>
+<body>
+    <div class="dashboard">
+        <div class="sidebar" style="background: #edf6fe; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+            <h1 class="text-center text-black">Dashboard</h1>
+            <a href="#">Tổng quan</a>
+            <a href="../Admin/news/index.php">Quản lý bài viết</a>
+            <a href="#">Cài đặt</a>
+            <a href="../Home/index.php">Đăng xuất</a>
+        </div>
     </div>
 
-    <!-- Content -->
     <div class="content">
-        <!-- Header -->
         <div class="header d-flex justify-content-between align-items-center">
-            <h3>Chào mừng bạn đến với Dashboard</h3>
             <div>
                 <span>Admin</span> | <a style="text-decoration:none; color:cadetblue;" href="../Home/home.php">Thoát</a>
             </div>
@@ -102,40 +100,12 @@
                 </div>
             </div>
         </div>
-
-        <!-- Table for Posts -->
-        <div class="mt-4">
-            <h4>Danh sách bài viết</h4>
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Tiêu đề</th>
-                        <th>Ngày tạo</th>
-                        <th>Trạng thái</th>
-                        <th>Hành động</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Giới thiệu về công nghệ AI</td>
-                        <td>01/12/2024</td>
-                        <td><span class="badge bg-success">Đã duyệt</span></td>
-                        <td><button class="btn btn-info btn-sm">Xem</button></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Xu hướng phát triển của Big Data</td>
-                        <td>30/11/2024</td>
-                        <td><span class="badge bg-warning">Chờ duyệt</span></td>
-                        <td><button class="btn btn-info btn-sm">Xem</button></td>
-                    </tr>
-                    <!-- Các bài viết khác -->
-                </tbody>
-            </table>
-        </div>
     </div>
+
+
+
+    <!-- Content -->
+
 
     <!-- Liên kết đến Bootstrap JS và Popper.js -->
     <script src="../../assets/js/bootstrap.bundle.min.js"></script>
