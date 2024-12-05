@@ -38,7 +38,7 @@
 
     <!-- Navbar -->
     <header style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-        <nav class="navbar navbar-expand-lg " style="background: #edf6fe; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+        <nav class="navbar navbar-expand-lg " style="background: #edf6fe">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#"><strong>
                         <h2>TLUNews</h2>
@@ -55,8 +55,16 @@
                             <a class="nav-link px-2" href="../Admin/login.php">Đăng nhập</a>
                         </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Tìm kiếm bài viết" aria-label="Search">
+                    <form class="d-flex" role="search" method="GET" action="index.php">
+                        <select class="form-select me-2" name="category_id">
+                            <option value="">Chọn thể loại</option>
+                            <?php foreach ($categories as $category): ?>
+                                <option value="<?= $category['id'] ?>"
+                                    <?php if (isset($_GET['category_id']) && $_GET['category_id'] == $category['id']) echo 'selected'; ?>>
+                                    <?= htmlspecialchars($category['name']) ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
                         <button class="btn btn-outline-secondary" type="submit">Tìm kiếm</button>
                     </form>
                 </div>

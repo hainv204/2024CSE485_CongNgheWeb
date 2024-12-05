@@ -54,8 +54,16 @@
                             <a class="nav-link px-2" href="../Admin/login.php">Đăng nhập</a>
                         </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Tìm kiếm bài viết" aria-label="Search">
+                    <form class="d-flex" role="search" method="GET" action="index.php">
+                        <select class="form-select me-2" name="category_id">
+                            <option value="">Chọn thể loại</option>
+                            <?php foreach ($categories as $category): ?>
+                                <option value="<?= $category['id'] ?>"
+                                    <?php if (isset($_GET['category_id']) && $_GET['category_id'] == $category['id']) echo 'selected'; ?>>
+                                    <?= htmlspecialchars($category['name']) ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
                         <button class="btn btn-outline-secondary" type="submit">Tìm kiếm</button>
                     </form>
                 </div>
@@ -76,6 +84,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Tiêu đề bài viết 1</h5>
                                 <p class="card-text">Mô tả ngắn gọn về bài viết 1.</p>
+                                <button class="btn btn-outline-secondary" >Xem chi tiết</button>
                             </div>
                         </div>
                     </div>
@@ -86,6 +95,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Tiêu đề bài viết 2</h5>
                                 <p class="card-text">Mô tả ngắn gọn về bài viết 2.</p>
+                                <button class="btn btn-outline-secondary" >Xem chi tiết</button>
                             </div>
                         </div>
                     </div>
@@ -96,48 +106,49 @@
                             <div class="card-body">
                                 <h5 class="card-title">Tiêu đề bài viết 3</h5>
                                 <p class="card-text">Mô tả ngắn gọn về bài viết 3.</p>
+                                <button class="btn btn-outline-secondary" >Xem chi tiết</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
     </main>
-        <footer class="text-black py-4 " style="background: #edf6fe; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <h5>Liên hệ</h5>
-                        <ul class="list-unstyled">
-                            <li>Email: nhom7@gmail.com</li>
-                            <li>Điện thoại: 0123-456-789</li>
-                            <li>Địa chỉ: 175 Tây Sơn, Đống Đa, Hà Nội</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4">
-                        <h5>Liên kết</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="#" class="text-black">Giới thiệu</a></li>
-                            <li><a href="#" class="text-black">Chính sách bảo mật</a></li>
-                            <li><a href="#" class="text-black">Điều khoản sử dụng</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4">
-                        <h5>Mạng xã hội</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="#" class="text-black">Facebook</a></li>
-                            <li><a href="#" class="text-black">Twitter</a></li>
-                            <li><a href="#" class="text-black">Instagram</a></li>
-                        </ul>
-                    </div>
+    <footer class="text-black py-4 " style="background: #edf6fe; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Liên hệ</h5>
+                    <ul class="list-unstyled">
+                        <li>Email: nhom7@gmail.com</li>
+                        <li>Điện thoại: 0123-456-789</li>
+                        <li>Địa chỉ: 175 Tây Sơn, Đống Đa, Hà Nội</li>
+                    </ul>
                 </div>
-                <div class="row">
-                    <div class="col text-center mt-4">
-                        <p>&copy; 2024 TLU NEWS.</p>
-                    </div>
+                <div class="col-md-4">
+                    <h5>Liên kết</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-black">Giới thiệu</a></li>
+                        <li><a href="#" class="text-black">Chính sách bảo mật</a></li>
+                        <li><a href="#" class="text-black">Điều khoản sử dụng</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Mạng xã hội</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-black">Facebook</a></li>
+                        <li><a href="#" class="text-black">Twitter</a></li>
+                        <li><a href="#" class="text-black">Instagram</a></li>
+                    </ul>
                 </div>
             </div>
-        </footer>
-        <script src="../../assets/js/bootstrap.bundle.min.js"></script>
+            <div class="row">
+                <div class="col text-center mt-4">
+                    <p>&copy; 2024 TLU NEWS.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../../assets/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
