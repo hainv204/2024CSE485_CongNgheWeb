@@ -1,17 +1,18 @@
 <?php
-$controller = isset($_GET['controller'])?$_GET['controller']:'Home';
-$action = isset($_GET['action'])?$_GET['action']:'index';
+$controller = $_GET['controller'] ?? 'home';
+$action = $_GET['action'] ?? 'index';
 
-$controllerPath = "./controllers/{$controller}Controller.php";
+$controller = ucfirst($controller) . 'Controller';
+$controllerFile = "controllers/$controller.php";
 
-if(file_exists($controllerPath)){
-    require_once($controllerPath);
-    $controllerClass = $controller.'Controller';
-    $controllerObject = new $controllerClass();
-
-    if (method_exists($controllerObject, $action))
-            $controllerObject->$action();
-    else echo "Action not found";
+if (file_exists($controllerFile)) {
+    require_once $controllerFile;
+    $controllerObj = new $controller();
+    if (method_exists($controllerObj, $action)) {
+        $controllerObj->$action();
+    } else {
+        echo "Action không tồn tại.";
+    }
+} else {
+    echo "Controller không tồn tại.";
 }
-else echo "Controller not found";
-?>
