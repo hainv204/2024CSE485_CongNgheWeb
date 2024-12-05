@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
     <title>Home</title>
     <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
 </head>
@@ -14,7 +13,9 @@
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">TLUNews</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -111,30 +112,6 @@
             </div>
         </footer>
         <script src="../../assets/js/bootstrap.bundle.min.js"></script>
-=======
-    <title>Danh sách tin tức</title>
-</head>
-
-<body>
-    <h1>Danh sách tin tức</h1>
-    <form method="GET" action="index.php">
-        <input type="hidden" name="controller" value="home">
-        <input type="hidden" name="action" value="search">
-        <input type="text" name="keyword" placeholder="Tìm kiếm tin tức...">
-        <button type="submit">Tìm kiếm</button>
-    </form>
-
-    <ul>
-        <?php foreach ($newsList as $news): ?>
-            <li>
-                <a href="index.php?controller=news&action=detail&id=<?= $news['id'] ?>">
-                    <?= htmlspecialchars($news['title']) ?>
-                </a>
-                <p><?= htmlspecialchars($news['category_name']) ?> | <?= htmlspecialchars($news['created_at']) ?></p>
-            </li>
-        <?php endforeach; ?>
-    </ul>
->>>>>>> origin/HoangThuPhuong
 </body>
 
 </html>
