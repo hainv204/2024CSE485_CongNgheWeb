@@ -4,301 +4,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Danh sách tin tức</title>
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f8f9fa;
+    }
+
+    header {
+        background-color: #ffffff;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .navbar-brand {
+        color: #007bff !important;
+        font-weight: bold;
+    }
+
+    .navbar-nav .nav-link {
+        color: #495057 !important;
+    }
+
+    .navbar-nav .nav-link:hover {
+        color: #007bff !important;
+    }
+
+    main {
+        padding: 40px 0;
+    }
+
+    .text-uppercase {
+        text-transform: uppercase;
+    }
+
+    .text-primary {
+        color: #007bff !important;
+    }
+
+    .card {
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-img-top {
+        border-radius: 8px 8px 0 0;
+        object-fit: cover;
+        height: 200px;
+    }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    .card-text {
+        font-size: 1rem;
+        color: #6c757d;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+        padding: 8px 16px;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+    .form-select {
+        width: 200px;
+    }
+
+    .search-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .search-container .btn-primary {
+        margin-left: 10px;
+    }
+
+    footer {
+        background-color: #343a40;
+        color: #ffffff;
+    }
+
+    footer p {
+        margin: 0;
+    }
+    </style>
 </head>
-<style>
-body {
-    background: #eeeeee;
-}
-
-.form-inline {
-    display: inline-block;
-}
-
-.navbar-header.col {
-    padding: 0 !important;
-}
-
-.navbar {
-    background: #fff;
-    padding-left: 16px;
-    padding-right: 16px;
-    border-bottom: 1px solid #d6d6d6;
-    box-shadow: 0 0 4px rgba(0, 0, 0, .1);
-}
-
-.nav-link img {
-    border-radius: 50%;
-    width: 36px;
-    height: 36px;
-    margin: -8px 0;
-    float: left;
-    margin-right: 10px;
-}
-
-.navbar .navbar-brand {
-    color: #555;
-    padding-left: 0;
-    padding-right: 50px;
-    font-family: 'Merienda One', sans-serif;
-}
-
-.navbar .navbar-brand i {
-    font-size: 20px;
-    margin-right: 5px;
-}
-
-.search-box {
-    position: relative;
-}
-
-.search-box input {
-    box-shadow: none;
-    padding-right: 35px;
-    border-radius: 3px !important;
-}
-
-.search-box .input-group-addon {
-    min-width: 35px;
-    border: none;
-    background: transparent;
-    position: absolute;
-    right: 0;
-    z-index: 9;
-    padding: 7px;
-    height: 100%;
-}
-
-.search-box i {
-    color: #a0a5b1;
-    font-size: 19px;
-}
-
-.navbar .nav-item i {
-    font-size: 18px;
-}
-
-.navbar .dropdown-item i {
-    font-size: 16px;
-    min-width: 22px;
-}
-
-.navbar .nav-item.open>a {
-    background: none !important;
-}
-
-.navbar .dropdown-menu {
-    border-radius: 1px;
-    border-color: #e5e5e5;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
-}
-
-.navbar .dropdown-menu a {
-    color: #777;
-    padding: 8px 20px;
-    line-height: normal;
-}
-
-.navbar .dropdown-menu a:hover,
-.navbar .dropdown-menu a:active {
-    color: #333;
-}
-
-.navbar .dropdown-item .material-icons {
-    font-size: 21px;
-    line-height: 16px;
-    vertical-align: middle;
-    margin-top: -2px;
-}
-
-.navbar .badge {
-    color: #fff;
-    background: #f44336;
-    font-size: 11px;
-    border-radius: 20px;
-    position: absolute;
-    min-width: 10px;
-    padding: 4px 6px 0;
-    min-height: 18px;
-    top: 5px;
-}
-
-.navbar a.notifications,
-.navbar a.messages {
-    position: relative;
-    margin-right: 10px;
-}
-
-.navbar a.messages {
-    margin-right: 20px;
-}
-
-.navbar a.notifications .badge {
-    margin-left: -8px;
-}
-
-.navbar a.messages .badge {
-    margin-left: -4px;
-}
-
-.navbar .active a,
-.navbar .active a:hover,
-.navbar .active a:focus {
-    background: transparent !important;
-}
-
-@media (min-width: 1200px) {
-    .form-inline .input-group {
-        width: 300px;
-        margin-left: 30px;
-    }
-}
-
-@media (max-width: 1199px) {
-    .form-inline {
-        display: block;
-        margin-bottom: 10px;
-    }
-
-    .input-group {
-        width: 100%;
-    }
-}
-</style>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">TLUNews</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <a class="navbar-brand" href="index.php">TLUNews</a>
+                <div class="collapse navbar-collapse">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Trang chủ</a>
+                            <a class="nav-link active" aria-current="page" href="index.php">Trang chủ</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../Admin/login.php">Đăng nhập</a>
                         </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    <!-- Tìm kiếm theo thể loại -->
+                    <form class="search-container" role="search" method="GET" action="index.php">
+                        <select class="form-select" name="category_id">
+                            <option value="">Chọn thể loại</option>
+                            <?php foreach ($categories as $category): ?>
+                            <option value="<?= $category['id'] ?>"
+                                <?php if (isset($_GET['category_id']) && $_GET['category_id'] == $category['id']) echo 'selected'; ?>>
+                                <?= htmlspecialchars($category['name']) ?>
+                            </option>
+                            <?php endforeach; ?>
+                        </select>
+                        <button class="btn btn-primary" type="submit">Tìm kiếm</button>
                     </form>
                 </div>
             </div>
         </nav>
     </header>
     <main>
-
-        <body>
-
-            <!-- Container chính -->
-            <div class="container mt-5">
-                <div class="row">
-                    <!-- Bài viết 1 -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <img src="https://via.placeholder.com/300" class="card-img-top" alt="Bài viết 1">
-                            <div class="card-body">
-                                <h5 class="card-title">Tiêu đề bài viết 1</h5>
-                                <p class="card-text">Mô tả ngắn gọn về bài viết 1.</p>
-                                <button class="btn btn-outline-secondary">Xem chi tiết</button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Bài viết 2 -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <img src="https://via.placeholder.com/300" class="card-img-top" alt="Bài viết 2">
-                            <div class="card-body">
-                                <h5 class="card-title">Tiêu đề bài viết 2</h5>
-                                <p class="card-text">Mô tả ngắn gọn về bài viết 2.</p>
-                                <button class="btn btn-outline-secondary">Xem chi tiết</button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Bài viết 3 -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <img src="https://via.placeholder.com/300" class="card-img-top" alt="Bài viết 3">
-                            <div class="card-body">
-                                <h5 class="card-title">Tiêu đề bài viết 3</h5>
-                                <p class="card-text">Mô tả ngắn gọn về bài viết 3.</p>
-                                <button class="btn btn-outline-secondary">Xem chi tiết</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </main>
-    <footer>
-        <footer class="bg-dark text-white py-4">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <h5>Liên hệ</h5>
-                        <ul class="list-unstyled">
-                            <li>Email: contact@example.com</li>
-                            <li>Điện thoại: 123-456-7890</li>
-                            <li>Địa chỉ: 123 Main St, Thành phố ABC</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4">
-                        <h5>Liên kết</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="#" class="text-white">Giới thiệu</a></li>
-                            <li><a href="#" class="text-white">Chính sách bảo mật</a></li>
-                            <li><a href="#" class="text-white">Điều khoản sử dụng</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4">
-                        <h5>Mạng xã hội</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="#" class="text-white">Facebook</a></li>
-                            <li><a href="#" class="text-white">Twitter</a></li>
-                            <li><a href="#" class="text-white">Instagram</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col text-center mt-4">
-                        <p>&copy; 2024 Trang báo ABC. Tất cả các quyền được bảo lưu.</p>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <script src="./assets/js/bootstrap.bundle.min.js"></script>
-        =======
-        <title>Danh sách tin tức</title>
-        </head>
-
-        <body>
-            <h1>Danh sách tin tức</h1>
-            <form method="GET" action="index.php">
-                <input type="hidden" name="controller" value="home">
-                <input type="hidden" name="action" value="search">
-                <input type="text" name="keyword" placeholder="Tìm kiếm tin tức...">
-                <button type="submit">Tìm kiếm</button>
-            </form>
-
-            <ul>
+        <div class="container mt-5">
+            <h1 class="text-center text-uppercase text-primary mb-5">Danh sách tin tức</h1>
+            <div class="row">
+                <?php if (count($newsList) > 0): ?>
                 <?php foreach ($newsList as $news): ?>
-                <li>
-                    <a href="index.php?controller=news&action=detail&id=<?= $news['id'] ?>">
-                        <?= htmlspecialchars($news['title']) ?>
-                    </a>
-                    <p><?= htmlspecialchars($news['category_name']) ?> | <?= htmlspecialchars($news['created_at']) ?>
-                    </p>
-                </li>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="<?= htmlspecialchars($news['image']) ?>" class="card-img-top" alt="Hình ảnh tin tức">
+                        <div class="card-body">
+                            <h5 class="card-title"><?= htmlspecialchars($news['title']) ?></h5>
+                            <p class="card-text"><?= htmlspecialchars(substr($news['content'], 0, 100)) ?>...</p>
+                            <a href="index.php?controller=home&action=detail&id=<?= $news['id'] ?>"
+                                class="btn btn-primary">Xem chi tiết</a>
+                        </div>
+                    </div>
+                </div>
                 <?php endforeach; ?>
-            </ul>
-            >>>>>>> origin/HoangThuPhuong
-        </body>
+                <?php else: ?>
+                <div class="col-12">
+                    <p class="text-center">Không có tin tức nào trong thể loại này.</p>
+                </div>
+                <?php endif; ?>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <p class="text-center">&copy; 2024 TLUNews. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
 
 </html>

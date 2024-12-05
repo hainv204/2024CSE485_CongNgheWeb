@@ -1,98 +1,151 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chi tiết bài viết</title>
-    <!-- Liên kết đến Bootstrap CSS -->
-    <link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
+    <title>Chi tiết tin tức</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <style>
-        /* Màu mặc định cho liên kết trong navbar */
-        .navbar-nav .nav-link {
-            color: #000;
-            /* Màu mặc định */
-        }
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f8f9fa;
+    }
 
-        .navbar-nav .nav-link:hover {
-            color: white;
-            /* Màu khi hover */
-            background-color: #69b9f9;
-            /* background-color: #70bcfc; */
-            /* Đảm bảo không có nền */
-            border-radius: 5px;
-        }
+    header {
+        background-color: #ffffff;
+        border-bottom: 1px solid #e0e0e0;
+    }
 
-        /* Tùy chỉnh màu cho nút tìm kiếm */
-        .btn.btn-outline-secondary:hover {
-            background-color: #69b9f9;
-            /* Màu nền khi hover */
-            color: white;
-            /* Màu chữ khi hover */
-            border: none;
-        }
+    .navbar-brand {
+        color: #007bff !important;
+        font-weight: bold;
+    }
+
+    .navbar-nav .nav-link {
+        color: #495057 !important;
+    }
+
+    .navbar-nav .nav-link:hover {
+        color: #007bff !important;
+    }
+
+    .container {
+        margin-top: 40px;
+    }
+
+    .card {
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-header {
+        background-color: #007bff;
+        color: #ffffff;
+        font-size: 1.5rem;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    .card-body h3 {
+        font-size: 2rem;
+        color: #343a40;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .card-body p {
+        font-size: 1.1rem;
+        color: #6c757d;
+    }
+
+    .card-body img {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+
+    .card-body img.no-image {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        background: #e0e0e0;
+        display: block;
+    }
+
+    footer {
+        background-color: #343a40;
+        color: #ffffff;
+        padding: 20px 0;
+    }
+
+    footer p {
+        margin: 0;
+        text-align: center;
+    }
     </style>
 </head>
 
 <body>
-
-    <!-- Navbar -->
-    <header style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-        <nav class="navbar navbar-expand-lg " style="background: #edf6fe">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"><strong>
-                        <h2>TLUNews</h2>
-                    </strong></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand" href="index.php">TLUNews</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link px-2" aria-current="page" href="#">Trang chủ</a>
+                            <a class="nav-link active" href="index.php">Trang chủ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link px-2" href="../Admin/login.php">Đăng nhập</a>
+                            <a class="nav-link" href="../Admin/login.php">Đăng nhập</a>
                         </li>
                     </ul>
-                    <form class="d-flex" role="search" method="GET" action="index.php">
-                        <select class="form-select me-2" name="category_id">
-                            <option value="">Chọn thể loại</option>
-                            <?php foreach ($categories as $category): ?>
-                                <option value="<?= $category['id'] ?>"
-                                    <?php if (isset($_GET['category_id']) && $_GET['category_id'] == $category['id']) echo 'selected'; ?>>
-                                    <?= htmlspecialchars($category['name']) ?>
-                                </option>
-                            <?php endforeach; ?>
-                        </select>
-                        <button class="btn btn-outline-secondary" type="submit">Tìm kiếm</button>
-                    </form>
                 </div>
             </div>
         </nav>
     </header>
+
     <main>
-        <!-- Container bài viết chi tiết -->
-        <div class="container mt-5">
-            <div class="row">
-                <div class="col-md-8 offset-md-2">
-                    <!-- Tiêu đề bài viết -->
-                    <h1 class="mb-4">Tiêu đề bài viết chi tiết</h1>
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    Chi tiết tin tức
+                </div>
+                <div class="card-body">
+                    <h3><?= htmlspecialchars($news['title']) ?></h3>
+                    <p><strong>Chuyên mục:</strong> <?= htmlspecialchars($news['category_name']) ?></p>
+                    <p><strong>Ngày đăng:</strong> <?= htmlspecialchars($news['created_at']) ?></p>
 
-                    <!-- Ảnh bài viết -->
-                    <img src="https://via.placeholder.com/800x400" class="img-fluid mb-4" alt="Bài viết chi tiết">
+                    <?php if (!empty($news['image'])): ?>
+                    <img src="<?= htmlspecialchars($news['image']) ?>" alt="<?= htmlspecialchars($news['title']) ?>">
+                    <?php else: ?>
+                    <img class="no-image" alt="Không có hình ảnh">
+                    <?php endif; ?>
 
-                    <!-- Nội dung bài viết -->
-                    <p><strong>Thể loại:</strong> Thể loại trinh thám</p>
-                    <p><strong>Ngày đăng:</strong> 01/12/2024</p>
-                    <p class="lead">Đây là phần nội dung bài viết chi tiết. Bạn có thể mô tả chi tiết hơn về chủ đề, sự kiện, hoặc câu chuyện mà bài viết muốn truyền tải. Các đoạn văn này có thể dài và phong phú với hình ảnh, video, hoặc các yếu tố khác hỗ trợ nội dung.</p>
-
+                    <p><?= nl2br(htmlspecialchars($news['content'])) ?></p>
                 </div>
             </div>
         </div>
     </main>
 
-    <script src="../../assets/js/bootstrap.bundle.min.js"></script>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 TLUNews. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
