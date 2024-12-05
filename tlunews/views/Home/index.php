@@ -118,7 +118,7 @@
                             <a class="nav-link active" aria-current="page" href="index.php">Trang chủ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../Admin/login.php">Đăng nhập</a>
+                            <a class="nav-link" href="index.php?controller=Admin&action=login">Đăng nhập</a>
                         </li>
                     </ul>
                     <!-- Tìm kiếm theo thể loại -->
