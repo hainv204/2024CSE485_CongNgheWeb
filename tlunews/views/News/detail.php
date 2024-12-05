@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chi tiết tin tức</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -12,20 +13,21 @@
         }
 
         header {
-            background-color: #343a40;
-            padding: 20px 0;
+            background-color: #ffffff;
+            border-bottom: 1px solid #e0e0e0;
         }
 
         .navbar-brand {
-            color: #ffffff !important;
+            color: #007bff !important;
+            font-weight: bold;
         }
 
         .navbar-nav .nav-link {
-            color: #ffffff !important;
+            color: #495057 !important;
         }
 
         .navbar-nav .nav-link:hover {
-            color: #dcdcdc !important;
+            color: #007bff !important;
         }
 
         .container {
@@ -53,6 +55,7 @@
             font-size: 2rem;
             color: #343a40;
             font-weight: bold;
+            margin-bottom: 20px;
         }
 
         .card-body p {
@@ -75,7 +78,6 @@
             border-radius: 8px;
             margin-bottom: 20px;
             background: #e0e0e0;
-            /* Màu nền nếu không có ảnh */
             display: block;
         }
 
@@ -94,13 +96,20 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark">
+        <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">TLUNews</a>
-                <div class="collapse navbar-collapse">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <a class="navbar-brand" href="index.php">TLUNews</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.php">Trang chủ</a>
+                            <a class="nav-link active" href="index.php">Trang chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../Admin/login.php">Đăng nhập</a>
                         </li>
                     </ul>
                 </div>
@@ -121,6 +130,8 @@
 
                     <?php if (!empty($news['image'])): ?>
                         <img src="<?= htmlspecialchars($news['image']) ?>" alt="<?= htmlspecialchars($news['title']) ?>">
+                    <?php else: ?>
+                        <img class="no-image" alt="Không có hình ảnh">
                     <?php endif; ?>
 
                     <p><?= nl2br(htmlspecialchars($news['content'])) ?></p>
@@ -134,6 +145,7 @@
             <p>&copy; 2024 TLUNews. All Rights Reserved.</p>
         </div>
     </footer>
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

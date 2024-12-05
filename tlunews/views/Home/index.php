@@ -13,31 +13,33 @@
         }
 
         header {
-            background-color: #343a40;
+            background-color: #ffffff;
+            border-bottom: 1px solid #e0e0e0;
         }
 
         .navbar-brand {
-            color: #ffffff !important;
+            color: #007bff !important;
+            font-weight: bold;
         }
 
         .navbar-nav .nav-link {
-            color: #ffffff !important;
+            color: #495057 !important;
         }
 
         .navbar-nav .nav-link:hover {
-            color: #dcdcdc !important;
+            color: #007bff !important;
         }
 
         main {
             padding: 40px 0;
         }
 
-        .text_uppercase {
+        .text-uppercase {
             text-transform: uppercase;
         }
 
-        .text-success {
-            color: #28a745 !important;
+        .text-primary {
+            color: #007bff !important;
         }
 
         .card {
@@ -81,6 +83,19 @@
             background-color: #0056b3;
         }
 
+        .form-select {
+            width: 200px;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-container .btn-primary {
+            margin-left: 10px;
+        }
+
         footer {
             background-color: #343a40;
             color: #ffffff;
@@ -89,31 +104,26 @@
         footer p {
             margin: 0;
         }
-
-        .form-select,
-        .btn-outline-success {
-            margin-right: 10px;
-        }
     </style>
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">TLUNews</a>
+                <a class="navbar-brand" href="index.php">TLUNews</a>
                 <div class="collapse navbar-collapse">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Trang chủ</a>
+                            <a class="nav-link active" aria-current="page" href="index.php">Trang chủ</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../Admin/login.php">Đăng nhập</a>
                         </li>
                     </ul>
                     <!-- Tìm kiếm theo thể loại -->
-                    <form class="d-flex" role="search" method="GET" action="index.php">
-                        <select class="form-select me-2" name="category_id">
+                    <form class="search-container" role="search" method="GET" action="index.php">
+                        <select class="form-select" name="category_id">
                             <option value="">Chọn thể loại</option>
                             <?php foreach ($categories as $category): ?>
                                 <option value="<?= $category['id'] ?>"
