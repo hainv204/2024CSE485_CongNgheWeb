@@ -1,46 +1,53 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
     <!-- Liên kết đến Bootstrap CSS -->
-    <link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
     <!-- Tùy chỉnh giao diện -->
     <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .sidebar {
-            height: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 250px;
-            background-color: #343a40;
-            color: white;
-            padding-top: 20px;
-        }
-        .sidebar a {
-            color: white;
-            padding: 10px 15px;
-            text-decoration: none;
-            display: block;
-        }
-        .sidebar a:hover {
-            background-color: #575d63;
-        }
-        .content {
-            margin-left: 250px;
-            padding: 20px;
-        }
-        .header {
-            background-color: #f8f9fa;
-            padding: 10px 15px;
-            border-bottom: 1px solid #ddd;
-        }
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .sidebar {
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        background-color: #343a40;
+        color: white;
+        padding-top: 20px;
+    }
+
+    .sidebar a {
+        color: white;
+        padding: 10px 15px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .sidebar a:hover {
+        background-color: #575d63;
+    }
+
+    .content {
+        margin-left: 250px;
+        padding: 20px;
+    }
+
+    .header {
+        background-color: #f8f9fa;
+        padding: 10px 15px;
+        border-bottom: 1px solid #ddd;
+    }
     </style>
 </head>
+
 <body>
 
     <!-- Sidebar -->
@@ -59,7 +66,7 @@
         <div class="header d-flex justify-content-between align-items-center">
             <h3>Chào mừng bạn đến với Dashboard</h3>
             <div>
-                <span>Admin</span> | <a  style="text-decoration:none; color:cadetblue;" href="../Home/home.php">Thoát</a>
+                <span>Admin</span> | <a style="text-decoration:none; color:cadetblue;" href="../Home/home.php">Thoát</a>
             </div>
         </div>
 
@@ -133,4 +140,5 @@
     <!-- Liên kết đến Bootstrap JS và Popper.js -->
     <script src="../../assets/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

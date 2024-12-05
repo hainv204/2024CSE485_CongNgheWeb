@@ -109,7 +109,8 @@
                 </div>
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-primary login-btn btn-block" name="signIn" value="login">Đăng nhập</button>
+                <button type="submit" class="btn btn-primary login-btn btn-block" name="signIn" value="login">Đăng
+                    nhập</button>
             </div>
             <div class="clearfix">
                 <label class="float-left form-check-label"><input type="checkbox"> Ghi nhớ đăng nhập</label>
