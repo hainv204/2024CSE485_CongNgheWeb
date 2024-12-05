@@ -16,3 +16,4 @@ if (file_exists($controllerFile)) {
 } else {
     echo "Controller không tồn tại.";
 }
+?>
