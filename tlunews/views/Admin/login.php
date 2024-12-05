@@ -85,7 +85,7 @@
 
 <body>
     <div class="login-form">
-        <form action="index.php?controller=Auth&action=handleSignIn" method="post">
+        <form action="index.php?controller=Admin&action=handleLogin" method="post">
             <h2 class="text-center">Đăng nhập</h2>
             <div class="form-group">
                 <div class="input-group">
@@ -113,8 +113,8 @@
                     nhập</button>
             </div>
             <div class="clearfix">
-                <label class="float-left form-check-label"><input type="checkbox"> Ghi nhớ đăng nhập</label>
-                <a href="#" class="float-right">Quên mật khẩu</a>
+                <a href="#" class="float-left">Quên mật khẩu</a>
+                <a href="index.php?controller=Admin&action=register" class="float-right">Đăng ký</a>
             </div>
             <div class="or-seperator"><i>hoặc</i></div>
             <p class="text-center">Đăng nhập với tài khoản mạng xã hội khác của bạn</p>
