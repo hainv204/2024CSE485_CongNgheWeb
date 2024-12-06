@@ -50,9 +50,14 @@
 
             <!-- Thể loại bài viết -->
             <div class="mb-3">
-                <label for="category" class="form-label">ID thể loại</label>
-                <input type="number" class="form-control" id="categoryID" name="categoryID" min=1
-                    value="<?= htmlspecialchars($news['category_id']) ?>" required>
+                <label for="category" class="form-label">Thể loại</label>
+                <select name="categoryID" id="categoryID" class="form-control">
+                    <option value="1" <?= $news['category_id'] == 1 ? 'selected' : '' ?>>Thể thao</option>
+                    <option value="2" <?= $news['category_id'] == 2 ? 'selected' : '' ?>>Công nghệ</option>
+                    <option value="3" <?= $news['category_id'] == 3 ? 'selected' : '' ?>>Sức khoẻ</option>
+                    <option value="4" <?= $news['category_id'] == 4 ? 'selected' : '' ?>>Giải trí</option>
+                    <option value="5" <?= $news['category_id'] == 5 ? 'selected' : '' ?>>Thời sự</option>
+                </select>
             </div>
             <!-- Index hidden -->
             <input type="hidden" name="id" value="<?=htmlspecialchars($news['id'])?>">
