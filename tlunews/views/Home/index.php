@@ -106,6 +106,10 @@
     }
     </style>
 </head>
+<?php 
+session_start();
+$isLogin = isset($_SESSION['user']);//Kiểm tra người dùng đăng nhập chưa
+?>
 
 <body>
     <header>
@@ -117,9 +121,15 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="index.php">Trang chủ</a>
                         </li>
+                        <?php if($isLogin):?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php?controller=Admin&action=logout">Đăng xuất</a>
+                        </li>
+                        <?php else:?>
                         <li class="nav-item">
                             <a class="nav-link" href="index.php?controller=Admin&action=login">Đăng nhập</a>
                         </li>
+                        <?php endif;?>
                     </ul>
                     <!-- Tìm kiếm theo thể loại -->
                     <form class="search-container" role="search" method="GET" action="index.php">

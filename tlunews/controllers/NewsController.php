@@ -4,6 +4,10 @@ define('BASE_URL', '/2024CSE485_CongNgheWeb/tlunews');
 class NewsController
 {
     public function index(){
+        $newsList = News::getAllNewsAdmin();
+        include __DIR__.'/../views/Home/index.php';
+    }
+    public function newsManagement(){
         $news = News::getAllNewsAdmin();
         include __DIR__.'/../views/Admin/news/index.php';
     }
@@ -28,7 +32,7 @@ class NewsController
                     $result = News::addNews($title, $content, $image_url,$date,$categoryID);
                     print_r($result);
                     if($result)
-                        header('Location: index.php?controller=News&action=index');
+                        header('Location: index.php?controller=News&action=newsManagement');
                 }
             }
         }
@@ -63,9 +67,9 @@ class NewsController
                     $result = News::updateNews($title, $content, $image_url,$date,$categoryID,$id);
                     // print_r($result);
                     if($result)
-                        header('Location: index.php?controller=News&action=index');
+                        header('Location: index.php?controller=News&action=newsManagement');
                  }
-                }else header('Location: index.php?controller=News&action=index');
+                }else header('Location: index.php?controller=News&action=newsManagement');
             }
     }
     //Delete
@@ -78,9 +82,9 @@ class NewsController
                     $id = $_POST['id'];
                     $result = News::deleteNews($id);
                     if ($result)
-                    header('Location: index.php?controller=News&action=index');
+                    header('Location: index.php?controller=News&action=newsManagement');
                 }
-            else header('Location: index.php?controller=News&action=index');
+            else header('Location: index.php?controller=News&action=newsManagement');
         }   
     }
 }

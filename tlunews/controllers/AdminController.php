@@ -23,7 +23,7 @@ class AdminController{
                         // print_r($_SESSION['user']);
                         //Kiểm tra user
                         if($result['role']==1)//Quản trị viên
-                        header("Location: index.php?controller=Admin&action=index");
+                            header("Location: index.php?controller=Admin&action=index");
                         else header("Location: index.php?controller=News&action=index");
                     }
                     else echo "Invalid username or password";
