@@ -116,7 +116,7 @@ class News
     public static function getByID($id){
         $database = new Database();
         $conn = $database->getConnection();
-        $stmt = $conn->prepare('select news.*,categories.id from news,categories where news.category_id = categories.id and news.id = :id');
+        $stmt = $conn->prepare('select news.*,category_id from news,categories where news.category_id = categories.id and news.id = :id');
         $stmt->bindParam(':id', $id,PDO::PARAM_INT);
         $stmt->execute();
         $result = $stmt->fetch(PDO::FETCH_ASSOC);

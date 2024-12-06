@@ -45,8 +45,14 @@
 
             <!-- Thể loại bài viết -->
             <div class="mb-3">
-                <label for="category" class="form-label">ID Thể loại</label>
-                <input type="text" class="form-control" id="categoryID" name="categoryID">
+                <label for="category" class="form-label">Thể loại</label>
+                <select name="categoryID" id="categoryID" class="form-control">
+                    <option value="1">Thể thao</option>
+                    <option value="2">Giáo dục</option>
+                    <option value="3">Du lịch</option>
+                    <option value="4">Kinh doanh</option>
+                    <option value="5">Công nghệ</option>
+                </select>
             </div>
 
             <!-- Nút Thêm -->
