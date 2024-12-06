@@ -68,7 +68,7 @@
         <div class="sidebar" style="background: #edf6fe; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
             <h1 class="text-center text-black">Dashboard</h1>
             <a href="index.php?controller=Admin&action=index">Tổng quan</a>
-            <a href="index.php?controller=News&action=index">Quản lý bài viết</a>
+            <a href="index.php?controller=News&action=newsManagement">Quản lý bài viết</a>
             <a href="#">Cài đặt</a>
             <a href="index.php?controller=Admin&action=logout">Đăng xuất</a>
         </div>
